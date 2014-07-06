@@ -1,0 +1,4 @@
+src,dest
+/tmp/a.txt,/tmp/output-a.txt
+/tmp/b.txt,/tmp/output-b.txt
+/tmp/c.txt,/tmp/output-c.txt

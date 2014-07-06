@@ -1,0 +1,2 @@
+host,user,password
+162.243.121.130,root,tyymizbmeztp

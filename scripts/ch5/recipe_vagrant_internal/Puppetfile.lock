@@ -1,0 +1,16 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/stdlib (4.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-java.git
+  ref: master
+  sha: a089f326ca3a975724cb492e1606fc1261e47921
+  specs:
+    java (1.1.1)
+      puppetlabs/stdlib (>= 0.1.6)
+
+DEPENDENCIES
+  java (>= 0)
+

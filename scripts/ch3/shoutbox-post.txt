@@ -1,0 +1,15 @@
+title,body
+Hello World,This is my first tweet!
+Another Post,Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+JMeter is Awesome,I am loving every minute of it
+Thoughts on Scala,Must be heavy baby. This and that...
+Java 8 Release,The release brings many good things to the table. Lamdas, Method References, Perm Gen no more, and so on. Regretably, we won't be using it for a while.
+Tipsy,I just backed MicroView: Chip-sized Arduino with built-in OLED Display!
+Trains,WAT? A blog post from @mreinhold that doesn't mention trains in the title or atom feed? 
+Foo,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+Bar,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. 
+Zap,Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Venkat,The print version of FPinJava8 is now available at
+Super,I forgot the return statement and to appease @mraible I've included the class def. But there is no way the imports will fit. 

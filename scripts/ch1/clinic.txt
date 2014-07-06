@@ -1,0 +1,10 @@
+owner_id,search_name,visit_date,visit_desc,pet_id
+10,Davis,2014/01/01,This is a new visit,12
+9,Estaban,2014/01/10,Some description,11
+8,,2014/01/03,Some description,10
+6,,2014/01/11,This is a new visit,7
+6,,2014/01/12,Some description,8
+7,,2014/01/14,This is a new visit,9
+3,Schroeder,2014/02/01,Some description,3
+10,Franklin,2014/01/03,Long stay visit,13
+3,Black,2014/01/03,This is a new visit,4

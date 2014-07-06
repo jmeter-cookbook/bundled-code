@@ -1,0 +1,9 @@
+user,pass
+joel,secr3t
+jim,grooVy
+sam,sCala
+tom,pa$$
+patrick,allgood!
+hari,c0mmons
+acton,letmeein
+bayo,express

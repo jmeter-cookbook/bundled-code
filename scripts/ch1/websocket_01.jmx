@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.11 r1554548">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1396262258000</longProp>
+        <longProp name="ThreadGroup.end_time">1396262258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </LoopController>
+        <hashTree>
+          <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="WebSocket Sampler" enabled="true">
+            <stringProp name="serverAddress">echo.websocket.org</stringProp>
+            <stringProp name="serverPort">80</stringProp>
+            <stringProp name="implementation">RFC6455 (v13)</stringProp>
+            <stringProp name="protocol">ws</stringProp>
+            <stringProp name="contextPath"></stringProp>
+            <stringProp name="contentEncoding">UTF-8</stringProp>
+            <stringProp name="requestPayload">Huston, we have a problem!</stringProp>
+            <stringProp name="connectionTimeout">5000</stringProp>
+            <stringProp name="responseTimeout">20000</stringProp>
+            <boolProp name="ignoreSslErrors">false</boolProp>
+            <boolProp name="streamingConnection">true</boolProp>
+            <stringProp name="connectionId"></stringProp>
+            <stringProp name="responsePattern"></stringProp>
+            <stringProp name="closeConncectionPattern"></stringProp>
+            <stringProp name="proxyAddress"></stringProp>
+            <stringProp name="proxyPassword"></stringProp>
+            <stringProp name="proxyPort"></stringProp>
+            <stringProp name="proxyUsername"></stringProp>
+            <stringProp name="messageBacklog">3</stringProp>
+            <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+          <hashTree/>
+        </hashTree>
+        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="WebSocket Sampler" enabled="true">
+          <stringProp name="serverAddress">echo.websocket.org</stringProp>
+          <stringProp name="serverPort">80</stringProp>
+          <stringProp name="implementation">RFC6455 (v13)</stringProp>
+          <stringProp name="protocol">ws</stringProp>
+          <stringProp name="contextPath"></stringProp>
+          <stringProp name="contentEncoding">UTF-8</stringProp>
+          <stringProp name="requestPayload">Roger that Apollo 13</stringProp>
+          <stringProp name="connectionTimeout">5000</stringProp>
+          <stringProp name="responseTimeout">20000</stringProp>
+          <boolProp name="ignoreSslErrors">false</boolProp>
+          <boolProp name="streamingConnection">false</boolProp>
+          <stringProp name="connectionId"></stringProp>
+          <stringProp name="responsePattern"></stringProp>
+          <stringProp name="closeConncectionPattern"></stringProp>
+          <stringProp name="proxyAddress"></stringProp>
+          <stringProp name="proxyPassword"></stringProp>
+          <stringProp name="proxyPort"></stringProp>
+          <stringProp name="proxyUsername"></stringProp>
+          <stringProp name="messageBacklog">3</stringProp>
+          <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.11 r1554548">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <MongoSourceElement guiclass="TestBeanGUI" testclass="MongoSourceElement" testname="MongoDB Source Config" enabled="true">
+        <boolProp name="autoConnectRetry">false</boolProp>
+        <intProp name="connectTimeout">0</intProp>
+        <stringProp name="connection">localhost</stringProp>
+        <intProp name="connectionsPerHost">10</intProp>
+        <boolProp name="continueOnInsertError">false</boolProp>
+        <boolProp name="fsync">false</boolProp>
+        <longProp name="maxAutoConnectRetryTime">0</longProp>
+        <intProp name="maxWaitTime">120000</intProp>
+        <boolProp name="safe">false</boolProp>
+        <boolProp name="socketKeepAlive">false</boolProp>
+        <intProp name="socketTimeout">0</intProp>
+        <stringProp name="source">mongo</stringProp>
+        <intProp name="threadsAllowedToBlockForConnectionMultiplier">5</intProp>
+        <boolProp name="waitForJournaling">false</boolProp>
+        <intProp name="writeOperationNumberOfServers">0</intProp>
+        <intProp name="writeOperationTimeout">0</intProp>
+      </MongoSourceElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1400023236000</longProp>
+        <longProp name="ThreadGroup.end_time">1400023236000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <MongoScriptSampler guiclass="TestBeanGUI" testclass="MongoScriptSampler" testname="MongoDB Script" enabled="true">
+          <stringProp name="database">jmeterDB</stringProp>
+          <stringProp name="password"></stringProp>
+          <stringProp name="source">mongo</stringProp>
+          <stringProp name="username"></stringProp>
+          <stringProp name="script">db.jmeter.insert({&quot;title&quot;:&quot;This is it&quot;, &quot;content&quot;: &quot;Super cool stuff&quot;, &quot;comments&quot;: [{&quot;user&quot;: &quot;john doe&quot;, &quot;comment&quot;: &quot;I didn&apos;t find this very useful.&quot;}, {&quot;user&quot;: &quot;lisa&quot;, &quot;comment&quot;: &quot;Get a life!&quot;}]});
+db.jmeter.insert({&quot;title&quot;:&quot;Another Post&quot;, &quot;content&quot;: &quot;Super cool stuff&quot;, &quot;comments&quot;: [{&quot;user&quot;: &quot;john doe&quot;, &quot;comment&quot;: &quot;I didn&apos;t find this very useful.&quot;}, {&quot;user&quot;: &quot;joan&quot;, &quot;comment&quot;: &quot;Get a life!&quot;}, {&quot;user&quot;: &quot;badboy&quot;, &quot;comment&quot;: &quot;This is all very exciting.&quot;}]});
+db.jmeter.insert({&quot;title&quot;:&quot;Working with JMeter&quot;, &quot;content&quot;: &quot;Super cool stuff&quot;, &quot;comments&quot;: [{&quot;user&quot;: &quot;cynthia&quot;, &quot;comment&quot;: &quot;Testing out comments.&quot;}]});
+db.jmeter.insert({&quot;title&quot;:&quot;Can Gatling overtake JMeter?&quot;, &quot;content&quot;: &quot;Gatling promises to deliver some cool stuff. JMeter still and ever will rule&quot;, &quot;comments&quot;: []});
+db.jmeter.insert({&quot;title&quot;:&quot;Cloud Testing&quot;, &quot;content&quot;: &quot;Super cool stuff&quot;, &quot;comments&quot;: [{&quot;user&quot;: &quot;mia&quot;, &quot;comment&quot;: &quot;I never knew you could do that!&quot;}]});
+db.jmeter.insert({&quot;title&quot;:&quot;Bring Back Our girls&quot;, &quot;content&quot;: &quot;In Nigeria, a terrorrist group called Boko Haram have taken hold of over 300 school girls&quot;, &quot;comments&quot;: [{&quot;user&quot;: &quot;dele&quot;, &quot;comment&quot;: &quot;This is depressing.I didn&apos;t find this very useful.&quot;}, {&quot;user&quot;: &quot;kunle&quot;, &quot;comment&quot;: &quot;I pray for their safe return&quot;}]});</stringProp>
+        </MongoScriptSampler>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

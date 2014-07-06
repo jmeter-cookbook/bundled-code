@@ -1,0 +1,6 @@
+db.jmeter.insert({"title":"This is it", "content": "Super cool stuff", "comments": [{"user": "john doe", "comment": "I didn't find this very useful."}, {"user": "lisa", "comment": "Get a life!"}]});
+db.jmeter.insert({"title":"Another Post", "content": "Super cool stuff", "comments": [{"user": "john doe", "comment": "I didn't find this very useful."}, {"user": "joan", "comment": "Get a life!"}, {"user": "badboy", "comment": "This is all very exciting."}]});
+db.jmeter.insert({"title":"Working with JMeter", "content": "Super cool stuff", "comments": [{"user": "cynthia", "comment": "Testing out comments."}]});
+db.jmeter.insert({"title":"Can Gatling overtake JMeter?", "content": "Gatling promises to deliver some cool stuff. JMeter still and ever will rule", "comments": []});
+db.jmeter.insert({"title":"Cloud Testing", "content": "Super cool stuff", "comments": [{"user": "mia", "comment": "I never knew you could do that!"}]});
+db.jmeter.insert({"title":"Bring Back Our girls", "content": "In Nigeria, a terrorrist group called Boko Haram have taken hold of over 300 school girls", "comments": [{"user": "dele", "comment": "This is depressing.I didn't find this very useful."}, {"user": "kunle", "comment": "I pray for their safe return"}]});

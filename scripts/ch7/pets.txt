@@ -1,0 +1,10 @@
+p_owner_id,name,birthDate,type
+4,hairy,2012/01/02,cat
+3,foo,2012/01/02,dog
+2,bar,2012/01/02,snake
+1,ginger,2012/01/02,lizard
+5,goz,2012/01/02,bird
+4,tiny,2012/01/02,hamster
+4,fluzz,2012/01/02,lizard
+6,rico,2012/01/02,dog
+7,andy,2012/01/02,bird

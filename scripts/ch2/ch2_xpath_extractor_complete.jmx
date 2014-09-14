@@ -26,53 +26,28 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="add_xpath_extractor_here" enabled="true">
-          <boolProp name="WAITING">true</boolProp>
-          <boolProp name="SUCCESFULL">true</boolProp>
-          <stringProp name="RESPONSE_CODE">200</stringProp>
-          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
-          <stringProp name="REQUEST_DATA">http://api.somehost.com/books?format=xml</stringProp>
-          <stringProp name="RESPONSE_DATA">&lt;bookstore&gt;
-
-&lt;book category=&quot;COOKING&quot;&gt;
-  &lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
-  &lt;author&gt;Giada De Laurentiis&lt;/author&gt;
-  &lt;year&gt;2005&lt;/year&gt;
-  &lt;price&gt;30.00&lt;/price&gt;
-&lt;/book&gt;
-
-&lt;book category=&quot;CHILDREN&quot;&gt;
-  &lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;
-  &lt;author&gt;J K. Rowling&lt;/author&gt;
-  &lt;year&gt;2005&lt;/year&gt;
-  &lt;price&gt;29.99&lt;/price&gt;
-&lt;/book&gt;
-
-&lt;book category=&quot;WEB&quot;&gt;
-  &lt;title lang=&quot;en&quot;&gt;XQuery Kick Start&lt;/title&gt;
-  &lt;author&gt;James McGovern&lt;/author&gt;
-  &lt;author&gt;Per Bothner&lt;/author&gt;
-  &lt;author&gt;Kurt Cagle&lt;/author&gt;
-  &lt;author&gt;James Linn&lt;/author&gt;
-  &lt;author&gt;Vaidyanathan Nagarajan&lt;/author&gt;
-  &lt;year&gt;2003&lt;/year&gt;
-  &lt;price&gt;49.99&lt;/price&gt;
-&lt;/book&gt;
-
-&lt;book category=&quot;WEB&quot;&gt;
-  &lt;title lang=&quot;en&quot;&gt;Learning XML&lt;/title&gt;
-  &lt;author&gt;Erik T. Ray&lt;/author&gt;
-  &lt;year&gt;2003&lt;/year&gt;
-  &lt;price&gt;39.95&lt;/price&gt;
-&lt;/book&gt;
-
-&lt;/bookstore&gt;</stringProp>
-          <stringProp name="RESPONSE_TIME">${__Random(100,1000)}</stringProp>
-          <stringProp name="LATENCY">${__Random(1,100)}</stringProp>
-        </kg.apc.jmeter.samplers.DummySampler>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="add_xpath_extractor_here" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">devbucket-afriq.s3.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/jmeter-cookbook/sample.xml</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
         <hashTree>
           <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
-            <stringProp name="XPathExtractor.default">not_found</stringProp>
+            <stringProp name="XPathExtractor.default">NOT_FOUND</stringProp>
             <stringProp name="XPathExtractor.refname">author</stringProp>
             <stringProp name="XPathExtractor.xpathQuery">/bookstore/book/author[1]</stringProp>
             <boolProp name="XPathExtractor.validate">false</boolProp>
@@ -81,6 +56,12 @@
           </XPathExtractor>
           <hashTree/>
         </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -112,12 +93,6 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
         <hashTree/>
       </hashTree>
     </hashTree>

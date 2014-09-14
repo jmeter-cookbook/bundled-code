@@ -26,42 +26,25 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Home" enabled="true">
-          <boolProp name="WAITING">true</boolProp>
-          <boolProp name="SUCCESFULL">true</boolProp>
-          <stringProp name="RESPONSE_CODE">200</stringProp>
-          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
-          <stringProp name="REQUEST_DATA">http://somehost.com/home</stringProp>
-          <stringProp name="RESPONSE_DATA">&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Home Page&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class=&quot;announcement&quot;&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    &lt;/div&gt;
-    
-    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
-        var xsrf_token = {&apos;xsrf&apos;:&apos;1396137189826sn4300596830105274809&apos;}
-        var searchId = &quot;213431014343&quot;;
-        
-        var myObj = {
-          var total = 1;
-          function increment(e){
-            total += typeof e === &apos;number&apos; ? e : 1;
-          }
-        };
-        
-        var userDetails = { &quot;role&quot;: &quot;super_user&quot;, &quot;region&quot;: &quot;us&quot;, &quot;last_login&quot;: &quot;2014-01-01T01:39:15Z&quot; };
-                
-    &lt;/script&gt;
-    
-  &lt;/body&gt;
-&lt;/html&gt;</stringProp>
-          <stringProp name="RESPONSE_TIME">${__Random(100,1000)}</stringProp>
-          <stringProp name="LATENCY">${__Random(1,100)}</stringProp>
-        </kg.apc.jmeter.samplers.DummySampler>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Home Page" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">devbucket-afriq.s3.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/jmeter-cookbook/regex-tester.html</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>

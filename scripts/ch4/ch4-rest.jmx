@@ -53,7 +53,7 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-      &quot;employeeId&quot;: 666,&#xd;
+      &quot;employeeId&quot;: 688,&#xd;
       &quot;employeeName&quot;: &quot;Stephen Lee&quot;,&#xd;
       &quot;startDate&quot;: &quot;2014-07-01T00:00:00Z&quot;,&#xd;
       &quot;endDate&quot;: &quot;2014-07-08T00:00:00Z&quot;&#xd;
@@ -96,7 +96,7 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;:${id},&#xd;
-      &quot;employeeId&quot;: 666,&#xd;
+      &quot;employeeId&quot;: 688,&#xd;
       &quot;employeeName&quot;: &quot;Stephen Lee&quot;,&#xd;
       &quot;startDate&quot;: &quot;2014-08-01T00:00:00Z&quot;,&#xd;
       &quot;endDate&quot;: &quot;2014-08-08T00:00:00Z&quot;&#xd;
@@ -194,67 +194,6 @@
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>false</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <longProp name="ThreadGroup.start_time">1400183004000</longProp>
-        <longProp name="ThreadGroup.end_time">1400183004000</longProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-      </ThreadGroup>
-      <hashTree>
-        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
-          <boolProp name="WAITING">true</boolProp>
-          <boolProp name="SUCCESFULL">true</boolProp>
-          <stringProp name="RESPONSE_CODE">200</stringProp>
-          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
-          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
-without actual network activity. This helps debugging tests.</stringProp>
-          <stringProp name="RESPONSE_DATA">{&quot;request&quot;:{&quot;id&quot;:5,&quot;employeeId&quot;:666,&quot;employeeName&quot;:&quot;Stephen Lee&quot;,&quot;startDate&quot;:&quot;2014-00-01T00:00:00Z&quot;,&quot;endDate&quot;:&quot;2014-00-08T00:00:00Z&quot;}}</stringProp>
-          <stringProp name="RESPONSE_TIME">${__Random(100,1000)}</stringProp>
-          <stringProp name="LATENCY">${__Random(1,100)}</stringProp>
-        </kg.apc.jmeter.samplers.DummySampler>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>

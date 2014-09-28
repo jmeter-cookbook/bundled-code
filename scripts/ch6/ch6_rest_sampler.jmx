@@ -19,47 +19,100 @@
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <longProp name="ThreadGroup.start_time">1403169385000</longProp>
-        <longProp name="ThreadGroup.end_time">1403169385000</longProp>
+        <longProp name="ThreadGroup.start_time">1406226171000</longProp>
+        <longProp name="ThreadGroup.end_time">1406226171000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <com.atlantbh.jmeter.plugins.rest.RestSampler guiclass="com.atlantbh.jmeter.plugins.rest.gui.RestGui" testclass="com.atlantbh.jmeter.plugins.rest.RestSampler" testname="jp@gc - REST Sampler" enabled="true">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="base_url" elementType="Argument">
+              <stringProp name="Argument.name">base_url</stringProp>
+              <stringProp name="Argument.value">http://api-jcb.herokuapp.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/xml</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/xml</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <com.atlantbh.jmeter.plugins.rest.RestSampler guiclass="com.atlantbh.jmeter.plugins.rest.gui.RestGui" testclass="com.atlantbh.jmeter.plugins.rest.RestSampler" testname="Create Holiday Request" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="RestSampler.request_body">&lt;HolidayRequest&gt;
+          <stringProp name="RestSampler.request_body">&lt;holidayRequest&gt;
   &lt;employeeId&gt;300&lt;/employeeId&gt;
   &lt;employeeName&gt;Jackson Fredo&lt;/employeeName&gt;
   &lt;startDate&gt;2014-06-19T00:00:00Z&lt;/startDate&gt;
   &lt;endDate&gt;2014-06-25T00:00:00Z&lt;/endDate&gt;
-&lt;/HolidayRequest&gt;</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
+&lt;/holidayRequest&gt;
+</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <stringProp name="RestSampler.base_host">${base_url}</stringProp>
-          <stringProp name="RestSampler.resource">/holiday-requests</stringProp>
+          <stringProp name="RestSampler.resource">holiday-requests/v2</stringProp>
+          <stringProp name="RestSampler.port_number"></stringProp>
+          <stringProp name="RestSampler.request_headers"></stringProp>
+        </com.atlantbh.jmeter.plugins.rest.RestSampler>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">id</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;id&gt;(\d+)&lt;/id&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <com.atlantbh.jmeter.plugins.rest.RestSampler guiclass="com.atlantbh.jmeter.plugins.rest.gui.RestGui" testclass="com.atlantbh.jmeter.plugins.rest.RestSampler" testname="Modify Holiday" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="RestSampler.request_body">&lt;holidayRequest&gt;
+  &lt;id&gt;${id}&lt;/id&gt;
+  &lt;employeeId&gt;300&lt;/employeeId&gt;
+  &lt;employeeName&gt;Jackson Fredo&lt;/employeeName&gt;
+  &lt;startDate&gt;2014-07-19T00:00:00Z&lt;/startDate&gt;
+  &lt;endDate&gt;2014-07-25T00:00:00Z&lt;/endDate&gt;
+&lt;/holidayRequest&gt;
+</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <stringProp name="RestSampler.base_host">${base_url} </stringProp>
+          <stringProp name="RestSampler.resource">holiday-requests/v2</stringProp>
           <stringProp name="RestSampler.port_number"></stringProp>
           <stringProp name="RestSampler.request_headers"></stringProp>
         </com.atlantbh.jmeter.plugins.rest.RestSampler>
         <hashTree/>
-        <com.atlantbh.jmeter.plugins.oauth.OAuthSampler guiclass="com.atlantbh.jmeter.plugins.oauth.gui.OAuthSamplerGui" testclass="com.atlantbh.jmeter.plugins.oauth.OAuthSampler" testname="jp@gc - OAuth Sampler" enabled="false">
+        <com.atlantbh.jmeter.plugins.rest.RestSampler guiclass="com.atlantbh.jmeter.plugins.rest.gui.RestGui" testclass="com.atlantbh.jmeter.plugins.rest.RestSampler" testname="Delete Holiday" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="OAuthSampler.consumer_key"></stringProp>
-          <stringProp name="OAuthSampler.consumer_secret"></stringProp>
-          <stringProp name="OAuthSampler.request_body"></stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="RestSampler.request_body"></stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-          <stringProp name="OAuthSampler.base_host"></stringProp>
-          <stringProp name="OAuthSampler.resource"></stringProp>
-          <stringProp name="OAuthSampler.port_number">8080</stringProp>
-          <stringProp name="OAuthSampler.request_headers"></stringProp>
-        </com.atlantbh.jmeter.plugins.oauth.OAuthSampler>
+          <stringProp name="RestSampler.base_host">${base_url} </stringProp>
+          <stringProp name="RestSampler.resource">holiday-requests/v2/${id}</stringProp>
+          <stringProp name="RestSampler.port_number"></stringProp>
+          <stringProp name="RestSampler.request_headers"></stringProp>
+        </com.atlantbh.jmeter.plugins.rest.RestSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -90,18 +143,36 @@
               <bytes>true</bytes>
             </value>
           </objProp>
+          <objProp>
+            <name></name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="base_url" elementType="Argument">
-              <stringProp name="Argument.name">base_url</stringProp>
-              <stringProp name="Argument.value">http://api-jcb.herokuapp.com</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
         <hashTree/>
       </hashTree>
     </hashTree>

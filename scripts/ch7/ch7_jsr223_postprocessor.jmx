@@ -54,7 +54,7 @@ without actual network activity. This helps debugging tests.</stringProp>
         <hashTree>
           <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="cacheKey"></stringProp>
-            <stringProp name="filename">/Users/berinle/workspace/packtpub/cookbook-bundled-code/scripts/ch7/ch7_jsr223.groovy</stringProp>
+            <stringProp name="filename">/tmp/ch7_jsr223.groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script"></stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
